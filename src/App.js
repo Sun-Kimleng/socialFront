@@ -12,7 +12,7 @@ function App() {
       <Route path='login' element={<Login />}/>
       
           <Route element={<ProtectedRoute />} >
-              <Route path='/' element={<Home />}/>
+              <Route path='/auth/facebook' element={<Home />}/>
           </Route>
 
     </Routes>
