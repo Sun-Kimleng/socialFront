@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Home = () => {
     
@@ -9,13 +10,13 @@ const Home = () => {
 
         const config = {
             headers:{
-                'accept': 'application/json'
+                'accept': 'application/json',
             }
         }
 
-        // const prop = this.props.location.search;
-
-        axios.get(`http://localhost:8000/api/login/facebook/callback`, config)
+        
+        
+        axios.get(`http://localhost:8000/api/login/facebook/callback${window.location.search}`, config)
         .then(response=>{
             console.log(response.data);
             setData(response.data);
