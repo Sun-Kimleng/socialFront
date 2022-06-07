@@ -6,10 +6,10 @@ const Home = () => {
     
     const [data, setData]=useState([]);
 
-    useEffect(()=>{
-
+    const handleClick = async()=>{
         const config = {
             headers:{
+                
                 'accept': 'application/json',
             }
         }
@@ -23,11 +23,18 @@ const Home = () => {
         }).catch(error=>{
             console.log(error);
         });
+
+    }
+
+    useEffect(()=>{
+
+        
     }, []);
     
     return ( 
         <div className="home">
             Home Page
+            <button onClick={handleClick}>get data</button>
         </div>
      );
 }
